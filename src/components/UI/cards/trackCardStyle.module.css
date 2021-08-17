@@ -1,0 +1,81 @@
+.track_card_container {
+  border-radius: 1rem;
+  position: relative;
+}
+
+.track_image {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.track_info {
+  position: absolute;
+  bottom: 0;
+  padding: 1.25rem 1rem;
+  width: 90%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.track_name {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track_artist {
+  font-size: 1rem;
+  color: rgb(160, 160, 160);
+  margin-top: 0.5rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track_button {
+  display: none;
+  background-color: #2dafd8;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 0;
+}
+
+.track_button img{
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.track_button_selected {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.track_card_container:hover .track_button {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.track_button:hover {
+  cursor: pointer;
+  background-color: #229ec4;
+  color: white;
+  transition: all 0.25s;
+}
+
+.track_button:active {
+  background-color: #1c86a8;
+}
