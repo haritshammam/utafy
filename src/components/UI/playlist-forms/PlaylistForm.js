@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { createPlaylist, spotifyActions } from '../../../redux/slices/spotify-slice'
-import { searchTrack } from '../../../redux/action-creators/spotify-api/search-track'
+import { createPlaylist, spotifyActions } from 'redux/slices/spotify-slice'
+import { searchTrack } from 'redux/action-creators/spotify-api/search-track'
 
 
-import Button from '../buttons'
-import TrackCard from '../cards/TrackCard'
-import styles from './formStyle.module.css'
+import Button from 'components/UI/buttons/Button'
+import TrackCard from 'components/UI/cards/TrackCard'
+import styles from './styles.module.css'
 
 const NewPlaylistForm = () => {
 

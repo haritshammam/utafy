@@ -6,23 +6,25 @@
     border-radius: 0.75rem;
     font-size: 1rem;
     font-weight: 600;
-    height: 3rem;
-}
-
-.button_medium {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.75rem;
+    height: 3.5rem;
 }
 
 .button_outline {
-    color: #2DAFD8;
-    border: 1px solid #2DAFD8; 
-    border-radius: 0.75rem;
-    font-size: 1rem;
+    border: 3px solid #85dffa; 
+    background-color: transparent;
+    color: #85dffa;
 }
 
 .button:hover {
     cursor: pointer;
     background-color: #1C86A8;
+    transition: all 250ms;
+}
+
+.button_outline:hover {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    color: #2DAFD8;
     transition: all 250ms;
 }

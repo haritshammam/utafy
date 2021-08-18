@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { spotifyActions } from '../../slices/spotify-slice'
+import { spotifyActions } from 'redux/slices/spotify-slice'
 
 export const searchTrack = (accessToken: string, searchKeyword: string) => {
     return async (dispatch: Function) => {

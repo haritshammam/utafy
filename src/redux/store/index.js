@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import tokenReducer from "../slices/token-slice"
-import spotifyReducer from "../slices/spotify-slice"
+import tokenReducer from "redux/slices/token-slice"
+import spotifyReducer from "redux/slices/spotify-slice"
 
 const store = configureStore({
     reducer: {

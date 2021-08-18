@@ -7,13 +7,12 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import { getUserProfile } from './redux/slices/spotify-slice';
-import { tokenActions } from './redux/slices/token-slice';
+import { getUserProfile } from 'redux/slices/spotify-slice';
+import { tokenActions } from 'redux/slices/token-slice';
 
 import './App.module.css'
-import Login from './pages/login/Login';
-import CreatePlaylist from './pages/create-playlist/CreatePlaylist';
-import Navbar from './components/navbar';
+import LandingPage from 'pages/landing-page/LandingPage';
+import CreatePlaylist from 'pages/create-playlist/CreatePlaylist';
 
 function App() {
   const accessToken = useSelector(state => state.token.token)
@@ -43,7 +42,6 @@ function App() {
 
   return (
     <Router>
-      <Navbar/>
       <Switch>
         <Route path="/create-playlist">
           <CreatePlaylist />
@@ -56,7 +54,7 @@ function App() {
           {accessToken && (
             <Redirect to="/create-playlist" />
           )}
-          <Login />
+          <LandingPage />
         </Route>
       </Switch>
     </Router>

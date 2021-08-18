@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./trackCardStyle.module.css";
+import styles from "./styles.module.css";
 
 import add from "./src/add.svg";
 import done from "./src/done.svg";

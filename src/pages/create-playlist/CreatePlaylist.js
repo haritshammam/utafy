@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './CreatePlaylist.module.css'
+import styles from './styles.module.css'
 
-import NewPlaylistForm from '../../components/UI/playlist-forms'
+import NewPlaylistForm from 'components/UI/playlist-forms/PlaylistForm'
 
 const CreatePlaylist = () => {
     return (

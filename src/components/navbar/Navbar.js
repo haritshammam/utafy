@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import Button from '../UI/buttons'
-import UserProfile from '../UI/user-profile'
-import styles from './navbarStyle.module.css'
+import Button from 'components/UI/buttons/Button'
+import UserProfile from 'components/UI/user-profile/UserProfile'
+import styles from './styles.module.css'
 import logo from './Logo.png'
 
-import { CLIENT_ID, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPE } from '../../constants/spotifyAuthConst'
+import { CLIENT_ID, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPE } from 'constants/spotifyAuthConst'
 
 const Navbar = () => {
     const handleLogin = () => {

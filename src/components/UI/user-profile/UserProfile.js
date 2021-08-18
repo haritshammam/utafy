@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { tokenActions } from '../../../redux/slices/token-slice'
+import { tokenActions } from 'redux/slices/token-slice'
 
-import styles from './userProfileStyle.module.css'
+import styles from './styles.module.css'
 
 const UserProfile = ({ userData }) => {
 
