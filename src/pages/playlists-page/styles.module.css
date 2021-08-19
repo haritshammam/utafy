@@ -1,0 +1,15 @@
+.page_container {
+    margin-top: 7.5rem;
+
+    display: flex;
+    height: calc(100vh - 5.5rem);
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+}

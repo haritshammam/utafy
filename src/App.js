@@ -12,9 +12,12 @@ import { tokenActions } from 'redux/slices/token-slice';
 
 import './App.module.css'
 import LandingPage from 'pages/landing-page/LandingPage';
-import CreatePlaylist from 'pages/create-playlist/CreatePlaylist';
+import CreatePlaylist from 'pages/create-playlist-page/CreatePlaylistPage';
 import HomePage from 'pages/home-page/HomePage';
 import Navbar from 'components/navbar/Navbar';
+import AlbumsPage from 'pages/albums-page/AlbumsPage';
+import PlaylistPage from 'pages/playlists-page/PlaylistPage';
+import SearchPage from 'pages/search-page/SearchPage';
 
 function App() {
   const accessToken = useSelector(state => state.token.token)
@@ -46,12 +49,40 @@ function App() {
     <Router>
       {accessToken && <Navbar />}
       <Switch>
+
+        {/* Home */}
         <Route path="/home">
           {!accessToken && (
             <Redirect to="/" exact />
           )}
           <HomePage />
         </Route>
+
+        {/* Search */}
+        <Route path="/search">
+          {!accessToken && (
+            <Redirect to="/" exact />
+          )}
+          <SearchPage/>
+        </Route>
+
+        {/* Home */}
+        <Route path="/playlists">
+          {!accessToken && (
+            <Redirect to="/" exact />
+          )}
+          <PlaylistPage/>
+        </Route>
+
+        {/* Home */}
+        <Route path="/albums">
+          {!accessToken && (
+            <Redirect to="/" exact />
+          )}
+          <AlbumsPage/>
+        </Route>
+
+        {/* Create Playlist */}
         <Route path="/create-playlist">
           <CreatePlaylist />
           {!accessToken && (
@@ -59,12 +90,14 @@ function App() {
           )}
         </Route>
 
+        {/* Landing Page */}
         <Route path="/" exact>
           {accessToken && (
-            <Redirect to="/create-playlist" />
+            <Redirect to="/home" />
           )}
           <LandingPage />
         </Route>
+
       </Switch>
     </Router>
   )

@@ -1,4 +1,6 @@
 Updates:
 1. Adding absolute imports from 'src'
 2. Code refactoring
-3. redesigning create new playlist form & make it responsive 
+3. redesigning UserProfile component
+4. Creating new navbar component
+4. Redesigning PlaylistForm component & make it responsive 
