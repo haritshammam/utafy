@@ -3,11 +3,8 @@
   padding: 0 1.25rem
 }
 
-.header {
-  font-size: 2rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 2.5rem;
+.form_container {
+  margin-top: 2.5rem;
 }
 
 .field_container {
@@ -114,9 +111,5 @@
   .track_card_list_container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
-  }
-
-  .form > Button {
-    /* width: 100%; */
   }
 }

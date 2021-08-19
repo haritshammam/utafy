@@ -25,7 +25,7 @@ const SideNav = () => {
             text: "Search"
         },
         {
-            link: "/Playlists",
+            link: "/playlists",
             icon: <RiPlayListLine className={styles.nav_list_icon} />,
             text: "Playlists"
         },

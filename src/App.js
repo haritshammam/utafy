@@ -8,13 +8,14 @@ import {
 } from 'react-router-dom';
 
 import { getUserProfile } from 'redux/slices/spotify-slice';
+import { getPlaylist } from 'redux/action-creators/spotify-api/current-playlist';
 import { tokenActions } from 'redux/slices/token-slice';
 
 import './App.module.css'
 import LandingPage from 'pages/landing-page/LandingPage';
 import CreatePlaylist from 'pages/create-playlist-page/CreatePlaylistPage';
 import HomePage from 'pages/home-page/HomePage';
-import Navbar from 'components/navbar/Navbar';
+import Navbar from 'components/navbars/Navbar';
 import AlbumsPage from 'pages/albums-page/AlbumsPage';
 import PlaylistPage from 'pages/playlists-page/PlaylistPage';
 import SearchPage from 'pages/search-page/SearchPage';
@@ -42,6 +43,7 @@ function App() {
     }
     if (accessToken) {
       dispatch(getUserProfile(accessToken))
+      dispatch(getPlaylist(accessToken))
     }
   }, [accessToken, dispatch]);
 

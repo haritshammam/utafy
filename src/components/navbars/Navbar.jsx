@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 import { uiActions } from 'redux/slices/ui-slice'
 
 import { BiMenu, BiX } from 'react-icons/bi'
-import SideNav from 'components/UI/sidenavs/SideNav'
+import SideNav from 'components/sidenavs/SideNav'
 
 const Navbar = () => {
     const dispatch = useDispatch()

@@ -1,15 +1,92 @@
 .page_container {
-    margin-top: 7.5rem;
-
-    display: flex;
-    height: calc(100vh - 5.5rem);
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
+  margin-top: 7.5rem;
+  padding: 0 1.25rem;
 }
 
-h1 {
-    color: white;
-    font-size: 4rem;
-    font-weight: 700;
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.playlist_container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0 4rem;
+}
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.playlist_image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 1rem;
+}
+
+.playlist_name {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist_description {
+  color: white;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist_info {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.playlist_info_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: linear-gradient(0deg, rgb(21, 28, 34, 1), rgb(21, 28, 34, 0));
+  z-index: 9;
+}
+
+@media screen and (min-width: 768px) {
+  .page_container {
+    padding: 0 3rem;
+  }
+
+  .playlist_container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .playlist_info {
+    padding: 1.25rem;
+  }
+
+  .playlist_name {
+    font-size: 1.25rem;
+  }
+
+  .playlist_description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
 }

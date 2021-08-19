@@ -1,0 +1,77 @@
+.track_card_container {
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.track_image {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.track_card_border {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 4px solid #2dafd8;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 10;
+}
+
+.track_info {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.track_info_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: linear-gradient(
+    0deg,
+    rgb(21, 28, 34, 1),
+    rgb(21, 28, 34, 0)
+  );
+  z-index: 9;
+}
+
+.track_name {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track_artist {
+  font-size: 0.75rem;
+  color: white;
+  margin-top: 0.25rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .track_info {
+    padding: 1.25rem;
+  }
+
+  .track_name {
+    font-size: 1.25rem;
+  }
+
+  .track_artist {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}

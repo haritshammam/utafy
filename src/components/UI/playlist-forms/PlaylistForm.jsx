@@ -6,8 +6,9 @@ import { searchTrack } from 'redux/action-creators/spotify-api/search-track'
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 import Button from 'components/UI/buttons/Button'
-import TrackCard from 'components/UI/cards/TrackCard'
+import TrackCard from 'components/UI/selectable-track-cards/TrackCard'
 import styles from './styles.module.css'
+import PageHeader from '../typos/page-header/PageHeader';
 
 const NewPlaylistForm = () => {
 
@@ -128,50 +129,51 @@ const NewPlaylistForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmitNewPlaylistForm} className={styles.form}>
-                <h2 className={styles.header}>Create new playlist</h2>
-                <div className={styles.field_container}>
-                    <label htmlFor="playlistTitle" className={styles.label}>Name</label>
-                    <input
-                        className={styles.input}
-                        id="playlistTitle"
-                        name="playlistTitle"
-                        type="text"
-                        placeholder="My Playlist #1"
-                        minLength="5"
-                        value={newPlaylistForm.playlistTitle}
-                        onChange={handleChangeNewPlaylistInput}
-                        required />
-                </div>
+                <PageHeader>Create new playlist</PageHeader>
+                <div className={styles.form_container}>
+                    <div className={styles.field_container}>
+                        <label htmlFor="playlistTitle" className={styles.label}>Name</label>
+                        <input
+                            className={styles.input}
+                            id="playlistTitle"
+                            name="playlistTitle"
+                            type="text"
+                            placeholder="My Playlist #1"
+                            minLength="10"
+                            value={newPlaylistForm.playlistTitle}
+                            onChange={handleChangeNewPlaylistInput}
+                            required />
+                    </div>
 
-                <div className={styles.field_container}>
-                    <label htmlFor="playlistDescription" className={styles.label}>Short Description</label>
-                    <input
-                        className={styles.input}
-                        id="playlistDescription"
-                        name="playlistDescription"
-                        type="text"
-                        placeholder="My Playlist description"
-                        minLength="10"
-                        value={newPlaylistForm.playlistDescription}
-                        onChange={handleChangeNewPlaylistInput}
-                        required />
-                </div>
+                    <div className={styles.field_container}>
+                        <label htmlFor="playlistDescription" className={styles.label}>Short Description</label>
+                        <input
+                            className={styles.input}
+                            id="playlistDescription"
+                            name="playlistDescription"
+                            type="text"
+                            placeholder="My Playlist description"
+                            minLength="20"
+                            value={newPlaylistForm.playlistDescription}
+                            onChange={handleChangeNewPlaylistInput}
+                            required />
+                    </div>
 
-                <div className={styles.field_container}>
-                    <label htmlFor="songList" className={styles.label}>Songs</label>
-                    <input
-                        className={styles.input}
-                        id="songList"
-                        name="songList"
-                        type="text"
-                        placeholder="Search your songs here"
-                        onChange={(e) => {
-                            setSearchKeyword(e.target.value.replace(" ", "+"))
-                            handleSearchTracks()
-                        }}
-                    />
+                    <div className={styles.field_container}>
+                        <label htmlFor="songList" className={styles.label}>Songs</label>
+                        <input
+                            className={styles.input}
+                            id="songList"
+                            name="songList"
+                            type="text"
+                            placeholder="Search your songs here"
+                            onChange={(e) => {
+                                setSearchKeyword(e.target.value.replace(" ", "+"))
+                                handleSearchTracks()
+                            }}
+                        />
+                    </div>
                 </div>
-
 
                 {tracksData && <p className={styles.text_small}>Select songs you want to add</p>}
 
