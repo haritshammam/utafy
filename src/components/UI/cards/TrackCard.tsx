@@ -1,9 +1,6 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 
-import add from "./src/add.svg";
-import done from "./src/done.svg";
-
 interface AlbumProps {
   images: {
     url: string;
@@ -45,31 +42,9 @@ const TrackCard = ({
     }
   };
 
-  let SelectButton;
-  if (!isTrackSelected2) {
-    SelectButton = (
-      <button
-        type="button"
-        className={styles.track_button}
-        onClick={handleSelectTrack}
-      >
-        <img src={add} alt="select" />
-      </button>
-    );
-  } else {
-    SelectButton = (
-      <button
-        type="button"
-        className={`${styles.track_button} ${styles.track_button_selected}`}
-        onClick={handleSelectTrack}
-      >
-        <img src={done} alt="deselect" />
-      </button>
-    );
-  }
-
   return (
-    <div className={styles.track_card_container}>
+    <div className={styles.track_card_container} onClick={handleSelectTrack}>
+      {isTrackSelected2 && <div className={styles.track_card_border}></div>}
       <img
         src={trackData.album.images[1].url}
         alt="Album"
@@ -84,7 +59,7 @@ const TrackCard = ({
           {trackData.artists[0].name}
         </p>
       </div>
-      {SelectButton}
+      <div className={styles.track_info_background}></div>
     </div>
   );
 };

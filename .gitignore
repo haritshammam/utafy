@@ -13,6 +13,7 @@
 
 # misc
 .env
+.updateNotes.txt
 .DS_Store
 .env.local
 .env.development.local

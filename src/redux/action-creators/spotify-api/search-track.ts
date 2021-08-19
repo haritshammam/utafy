@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { spotifyActions } from 'redux/slices/spotify-slice'
 
-export const searchTrack = (accessToken: string, searchKeyword: string) => {
+export const searchTrack = (accessToken: string, searchKeyword: string, offset: number) => {
     return async (dispatch: Function) => {
         try {
             const res = await axios({
@@ -16,7 +16,8 @@ export const searchTrack = (accessToken: string, searchKeyword: string) => {
                     api_key: process.env.REACT_APP_GIPHY_API_KEY,
                     q: searchKeyword,
                     type: "track",
-                    limit: 9
+                    limit: 6,
+                    offset: offset
                 }
             })
             dispatch(spotifyActions.appendTracksData(res.data.tracks.items))

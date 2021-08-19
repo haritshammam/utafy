@@ -1,5 +1,6 @@
 .form {
   margin-bottom: 4rem;
+  padding: 0 1.25rem
 }
 
 .header {
@@ -10,26 +11,26 @@
 }
 
 .field_container {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
 .label {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #b0bbc8;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .input {
   display: block;
-  height: 4rem;
+  height: 3.5rem;
   width: 100%;
   border: 0;
-  border-radius: 1.5rem;
-  background-color: #383f45;
-  font-size: 1.25rem;
-  padding-left: 2rem;
+  border-radius: 1rem;
+  background-color: #394b51;
+  font-size: 1rem;
+  padding-left: 1.25rem;
   box-sizing: border-box;
   color: white;
 }
@@ -38,51 +39,84 @@
   outline: none;
 }
 
-.input_search_song {
-  position: relative;
-}
-
-.search_song_button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: #2dafd8;
-  border: 0;
-  height: 4rem;
-  width: 6.25rem;
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-  color: white;
-  display: grid;
-  place-items: center;
-}
-
-.search_song_button:hover {
-  cursor: pointer;
-  background-color: #1c86a8;
-  transition: all 250ms;
-}
-
 ::placeholder {
-  color: #73808a;
+  color: #6d7b7f;
 }
 
 .text_small {
-  color: #73808a;
-  margin-top: 3rem;
+  color: #b0bbc8;
+  margin-top: 2.5rem;
+  text-align: center;
 }
 
 .track_card_list_container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .form > Button {
   width: 100%;
-  height: 4rem;
-  font-size: 1.25rem;
-  border-radius: 1.5rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.track_result_navigation_container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.track_result_navigation_button {
+  cursor: pointer;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  border: 0;
+  background-color: #2DAFD8;
+  display: grid;
+  place-items: center;
+}
+
+.track_result_navigation_button:hover {
+  background-color: #1C86A8;
+  transition: all 250ms;
+}
+
+.button_disabled {
+  background-color: #394B51;
+  pointer-events: none;
+}
+
+.track_result_navigation_button:last-of-type {
+  margin-right: 0;
+}
+
+.track_result_navigation_icon {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  color: white;
+}
+
+.icon_disabled {
+  color: #6D7B7F;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    padding: 0 3rem;
+  }
+
+  .track_card_list_container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .form > Button {
+    /* width: 100%; */
+  }
 }

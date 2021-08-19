@@ -1,10 +1,13 @@
 .navbar_container {
-    padding: 1rem 0;
+    height: 5.5rem;
+    padding: 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar_container img {
-    height: 2.5rem;
+.menu_button {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
 }

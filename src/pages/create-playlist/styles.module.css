@@ -1,13 +1,13 @@
-.app_container {
-	padding: 5rem 3rem 7rem;
+.page_container {
+  margin-top: 2rem;
 }
 
 .search_container {
-	position: relative;
+  position: relative;
 }
 
 .search_button {
-	position: absolute;
-	top: 0.45rem;
-	right: 8.6rem;
+  position: absolute;
+  top: 0.45rem;
+  right: 8.6rem;
 }
