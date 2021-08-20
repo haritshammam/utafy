@@ -21,9 +21,7 @@ let getByTestId;
 beforeEach(() => {
     const component = render(<TrackCard trackData={trackData}/>)
     getByTestId = component.getByTestId
-}
-
-)
+})
 
 test('image of track card rendered', () => {
     const imgEl = getByTestId("track-image")
@@ -39,3 +37,4 @@ test('artist name of track card rendered', () => {
     const artistEl = getByTestId("track-artist")
     expect(artistEl).toBeInTheDocument()
 })
+

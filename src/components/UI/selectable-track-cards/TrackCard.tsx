@@ -31,11 +31,11 @@ const TrackCard = ({
   pushToSelectedTracks,
   deleteFromSelectedTracks,
 }: TrackCardProps) => {
-  const [isTrackSelected2, setTrackSelected] = useState(buttonState);
+  const [isTrackSelected, setTrackSelected] = useState(buttonState);
 
   const handleSelectTrack = () => {
-    setTrackSelected(!isTrackSelected2);
-    if (!isTrackSelected2) {
+    setTrackSelected(!isTrackSelected);
+    if (!isTrackSelected) {
       pushToSelectedTracks(trackData.uri);
     } else {
       deleteFromSelectedTracks(trackData.uri);
@@ -43,8 +43,17 @@ const TrackCard = ({
   };
 
   return (
-    <div className={styles.track_card_container} onClick={handleSelectTrack}>
-      {isTrackSelected2 && <div className={styles.track_card_border}></div>}
+    <div
+      className={styles.track_card_container}
+      onClick={handleSelectTrack}
+      data-testid="track-card-container"
+    >
+      {isTrackSelected && (
+        <div
+          className={styles.track_card_border}
+          data-testid="track-card-border"
+        ></div>
+      )}
       <img
         src={trackData.album.images[1].url}
         alt="Album"

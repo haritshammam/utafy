@@ -38,7 +38,11 @@ const SideNav = () => {
 
     return (
         <div>
-            <nav className={!isMenuClicked ? `${styles.nav_menu}` : `${styles.nav_menu} ${styles.nav_menu_active}`}>
+            <nav className={
+                !isMenuClicked ?
+                    `${styles.nav_menu}` :
+                    `${styles.nav_menu} ${styles.nav_menu_active}`
+            }>
                 <div className={styles.nav_logo}>
                     <img src={logo} alt="utafy logo" className={styles.logo} />
                 </div>
