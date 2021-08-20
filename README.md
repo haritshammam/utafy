@@ -1,71 +1,39 @@
-# Getting Started with Create React App
+# Utafy - Spotify Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Hello! 
 
-In the project directory, you can run:
+This is my Final Project as a YABB's GenerasiGigih Intermediate Phase Frontend Engineering Path.
 
-### `yarn start`
+This responsive app works both in Mobile screen and Laptop screen.
+**I strongly suggest you to use this app using Google Chrome.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This app utilizes Spotify Web APIs to authenticate your account first,  and then after you are authenticated, you can use all the features that I will mention below.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
+ 1. **Search song** based on the title, artist name, or album name.
+ 2. **Select songs from search result to add/remove** it to your new playlist
+ 3. **Create new playlist** with playlist name, short description, and selected songs
+ 4. **Menus** :
+	 1. **Home**
+	 This will shows **New Releases** and **Featured playlists**. When you click those cards, it will open to new tab of its Spotify page .
+	 2. **Playlists**
+	 This section will shows your **saved Playlists** from your Spotify
+	 3. **Albums**
+	 In this page, it will shows your **saved Albums** from your Spotify
+	 4. **Create Playlist**
+	 In this page, it has features that I've mentioned on **point 1 - 3**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Run This App
 
-### `yarn build`
+ 1. Clone this repo
+ 2. Run **npm install**
+ 3. Generate your Spotify Cliend ID in https://developer.spotify.com/dashboard/applications
+ 4. Create http://localhost:[portNumber] as a Redirect URI in the dashboard settings
+ 5. **Create .env file** in the root folder, and then add :
+	 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# generasi-gigih-homework
+	> REACT_APP_SPOTIFY_CLIENT_ID=[yourSpotifyClientID]
+6. Run **npm run start** or **yarn start**
+7. Done :)
