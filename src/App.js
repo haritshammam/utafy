@@ -8,7 +8,10 @@ import {
 } from 'react-router-dom';
 
 import { getUserProfile } from 'redux/slices/spotify-slice';
-import { getPlaylist } from 'redux/action-creators/spotify-api/current-playlist';
+import { getPlaylists } from 'redux/action-creators/spotify-api/get-current-playlist';
+import { getAlbums } from 'redux/action-creators/spotify-api/get-current-albums';
+import { getNewReleases } from 'redux/action-creators/spotify-api/get-new-releases';
+import { getFeaturedPlaylists } from 'redux/action-creators/spotify-api/get-featured-playlists';
 import { tokenActions } from 'redux/slices/token-slice';
 
 import './App.module.css'
@@ -18,7 +21,7 @@ import HomePage from 'pages/home-page/HomePage';
 import Navbar from 'components/navbars/Navbar';
 import AlbumsPage from 'pages/albums-page/AlbumsPage';
 import PlaylistPage from 'pages/playlists-page/PlaylistPage';
-import SearchPage from 'pages/search-page/SearchPage';
+import PrivateRoute from 'components/routers/PrivateRoute';
 
 function App() {
   const accessToken = useSelector(state => state.token.token)
@@ -39,65 +42,43 @@ function App() {
   useEffect(() => {
     if (window.location.hash) {
       const { access_token } = getParamsFromUrl(window.location.hash)
-      dispatch(tokenActions.getToken(access_token))
+      dispatch(tokenActions.setToken(access_token))
     }
     if (accessToken) {
       dispatch(getUserProfile(accessToken))
-      dispatch(getPlaylist(accessToken))
+      dispatch(getPlaylists(accessToken))
+      dispatch(getAlbums(accessToken))
+      dispatch(getNewReleases(accessToken))
+      dispatch(getFeaturedPlaylists(accessToken))
     }
   }, [accessToken, dispatch]);
 
   return (
     <Router>
       {accessToken && <Navbar />}
+
       <Switch>
-
         {/* Home */}
-        <Route path="/home">
-          {!accessToken && (
-            <Redirect to="/" exact />
-          )}
-          <HomePage />
-        </Route>
+        <PrivateRoute component={HomePage} path="/home" exact />
 
-        {/* Search */}
-        <Route path="/search">
-          {!accessToken && (
-            <Redirect to="/" exact />
-          )}
-          <SearchPage/>
-        </Route>
+        {/* Playlists */}
+        <PrivateRoute component={PlaylistPage} path="/playlists" exact />
 
-        {/* Home */}
-        <Route path="/playlists">
-          {!accessToken && (
-            <Redirect to="/" exact />
-          )}
-          <PlaylistPage/>
-        </Route>
-
-        {/* Home */}
-        <Route path="/albums">
-          {!accessToken && (
-            <Redirect to="/" exact />
-          )}
-          <AlbumsPage/>
-        </Route>
+        {/* Albums */}
+        <PrivateRoute component={AlbumsPage} path="/albums" exact />
 
         {/* Create Playlist */}
-        <Route path="/create-playlist">
-          <CreatePlaylist />
-          {!accessToken && (
-            <Redirect to="/" exact />
-          )}
-        </Route>
+        <PrivateRoute component={CreatePlaylist} path="/create-playlist" exact />
 
         {/* Landing Page */}
-        <Route path="/" exact>
-          {accessToken && (
-            <Redirect to="/home" />
-          )}
+        <Route exact path="/">
+          {accessToken && <Redirect to="/home" />}
           <LandingPage />
+        </Route>
+
+        {/* When any non-existing URL is entered */}
+        <Route path="/:sembarang">
+          {!accessToken && <Redirect to="/" />}
         </Route>
 
       </Switch>

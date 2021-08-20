@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { BiHomeAlt, BiSearch, BiAlbum } from "react-icons/bi"
+import { BiHomeAlt, BiAlbum } from "react-icons/bi"
 import { RiPlayListLine } from "react-icons/ri"
 import { CgAddR } from "react-icons/cg"
 
@@ -18,11 +18,6 @@ const SideNav = () => {
             link: "/home",
             icon: <BiHomeAlt className={styles.nav_list_icon} />,
             text: "Home"
-        },
-        {
-            link: "/search",
-            icon: <BiSearch className={styles.nav_list_icon} />,
-            text: "Search"
         },
         {
             link: "/playlists",

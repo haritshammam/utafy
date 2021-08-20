@@ -1,9 +1,8 @@
 import styles from './styles.module.css'
 
-const Card = ({cardData, spotifyLink}) => {
+const Card = ({cardData, spotifyLink, subtitle}) => {
     return (
         <div
-            key={cardData.id}
             className={styles.card_container}
             onClick={() => {
                 window.open(spotifyLink, '_blank')
@@ -16,7 +15,7 @@ const Card = ({cardData, spotifyLink}) => {
             />
             <div className={styles.card_info}>
                 <p className={styles.card_title}>{cardData.name}</p>
-                <p className={styles.card_subtitle}>{cardData.description}</p>
+                <p className={styles.card_subtitle}>{subtitle}</p>
             </div>
             <div className={styles.card_info_background}></div>
         </div>

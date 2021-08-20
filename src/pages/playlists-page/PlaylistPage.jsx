@@ -11,7 +11,6 @@ import styles from './styles.module.css'
 const PlaylistPage = () => {
     const dispatch = useDispatch()
     const playlistsData = useSelector(state => state.spotify.playlistsData)
-    const accessToken = useSelector(state => state.token.token)
 
     useEffect(() => {
         dispatch(spotifyActions.clearSelectedTracks())
@@ -24,9 +23,14 @@ const PlaylistPage = () => {
                 <PageSubheader>Showing {playlistsData ? playlistsData.length.toString() : '0'} result</PageSubheader>
             </div>
             <div className={styles.playlist_container}>
-                {accessToken && playlistsData.map((item) => {
+                {playlistsData && playlistsData.map((item) => {
                     return (
-                        <Card key={item.id} cardData={item} spotifyLink={item.external_urls.spotify}/>
+                        <Card
+                            key={item.id}
+                            cardData={item}
+                            spotifyLink={item.external_urls.spotify}
+                            subtitle={item.description}
+                        />
                     )
                 })}
             </div>

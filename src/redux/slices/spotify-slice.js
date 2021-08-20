@@ -4,7 +4,10 @@ import axios from 'axios'
 const initialSpotifyState = {
     tracksData: null,
     userData: null,
-    playlistsData: null
+    playlistsData: null,
+    albumsData: null,
+    newReleasesData: null,
+    featuredPlaylistsData: null
 }
 
 const spotifySlice = createSlice({
@@ -21,6 +24,18 @@ const spotifySlice = createSlice({
 
         appendPlaylistData(state, action) {
             state.playlistsData = action.payload
+        },
+
+        appendNewReleasesData(state, action) {
+            state.newReleasesData = action.payload
+        },
+
+        appendAlbumData(state, action) {
+            state.albumsData = action.payload
+        },
+
+        appendFeaturedPlaylistsData(state, action) {
+            state.featuredPlaylistsData = action.payload
         },
 
         clearSelectedTracks(state) {

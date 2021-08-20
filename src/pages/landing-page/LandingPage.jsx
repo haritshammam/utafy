@@ -2,7 +2,7 @@ import React from 'react'
 import logo from 'images/Logo.png'
 
 import styles from './styles.module.css'
-import Button from 'components/UI/buttons/Button'
+import Button from 'components/UI/buttons/regular-buttons/Button'
 
 import { CLIENT_ID, SPOTIFY_AUTHORIZE_ENDPOINT, REDIRECT_URL_AFTER_LOGIN, SCOPE } from 'constants/spotifyAuthConst'
 

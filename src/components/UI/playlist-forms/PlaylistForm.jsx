@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createPlaylist, spotifyActions } from 'redux/slices/spotify-slice'
-import { searchTrack } from 'redux/action-creators/spotify-api/search-track'
+import { searchTrack } from 'redux/action-creators/spotify-api/get-search-track'
 
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-import Button from 'components/UI/buttons/Button'
+import Button from 'components/UI/buttons/regular-buttons/Button'
 import TrackCard from 'components/UI/selectable-track-cards/TrackCard'
 import styles from './styles.module.css'
 import PageHeader from '../typos/page-header/PageHeader';

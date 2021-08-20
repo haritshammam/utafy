@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { spotifyActions } from 'redux/slices/spotify-slice'
 
-export const getPlaylist = (accessToken: string) => {
+export const getPlaylists = (accessToken: string) => {
     return async (dispatch: Function) => {
         try {
             const res = await axios({
@@ -13,7 +13,7 @@ export const getPlaylist = (accessToken: string) => {
                     "Content-Type": "application/json",
                 }
             })
-            await dispatch(spotifyActions.appendPlaylistData(res.data.items))
+            dispatch(spotifyActions.appendPlaylistData(res.data.items))
         }
         catch (err) {
             console.error(err)
