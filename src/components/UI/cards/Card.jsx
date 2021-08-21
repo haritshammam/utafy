@@ -1,4 +1,5 @@
 import styles from './styles.module.css'
+import noImage from 'images/no-image.png'
 
 const Card = ({cardData, spotifyLink, subtitle}) => {
     return (
@@ -9,7 +10,7 @@ const Card = ({cardData, spotifyLink, subtitle}) => {
             }}
         >
             <img
-                src={cardData.images[0].url}
+                src={cardData.images.length ? cardData.images[0].url : noImage}
                 alt="playlist cover"
                 className={styles.card_image}
             />

@@ -6,6 +6,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
+import Cookies from 'js-cookie'
 
 import { getUserProfile } from 'redux/slices/spotify-slice';
 import { getPlaylists } from 'redux/action-creators/spotify-api/get-current-playlist';
@@ -39,11 +40,19 @@ function App() {
     return paramsSplitUp
   }
 
+  const readCookie = () => {
+    const tokenValue = Cookies.get('accessToken')
+    if (tokenValue) {
+      dispatch(tokenActions.setToken(tokenValue))
+    }
+  }
+
   useEffect(() => {
     if (window.location.hash) {
       const { access_token } = getParamsFromUrl(window.location.hash)
-      dispatch(tokenActions.setToken(access_token))
+      Cookies.set('accessToken', access_token, { expires: 1 })
     }
+    readCookie()
     if (accessToken) {
       dispatch(getUserProfile(accessToken))
       dispatch(getPlaylists(accessToken))
@@ -51,7 +60,7 @@ function App() {
       dispatch(getNewReleases(accessToken))
       dispatch(getFeaturedPlaylists(accessToken))
     }
-  }, [accessToken, dispatch]);
+  });
 
   return (
     <Router>

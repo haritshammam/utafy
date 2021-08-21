@@ -93,7 +93,7 @@ const NewPlaylistForm = () => {
     const handleSubmitNewPlaylistForm = e => {
         e.preventDefault()
         if (selectedTracks.length === 0) {
-            alert("No selected playlist")
+            alert("No songs are selected")
             return
         }
         else {
