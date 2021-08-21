@@ -37,4 +37,3 @@ test('artist name of track card rendered', () => {
     const artistEl = getByTestId("track-artist")
     expect(artistEl).toBeInTheDocument()
 })
-

@@ -5,6 +5,7 @@ const Button = ({ children, onClick, secondaryButton }) => {
     return (
         <>
             <button
+                data-testid="button-element"
                 className={`
                     ${styles.button} 
                     ${secondaryButton ? styles.button_outline : null}

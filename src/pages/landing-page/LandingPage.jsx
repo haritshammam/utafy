@@ -31,7 +31,7 @@ const LandingPage = () => {
                 </h2>
 
                 <div className={styles.button_group}>
-                    <Button onClick={handleLogin} data-testid="authenticate-button">Authenticate your account</Button>
+                    <Button onClick={handleLogin}>Authenticate your account</Button>
                     <Button onClick={handleOpenGithubRepo} secondaryButton>GitHub Page</Button>
                 </div>
             </main>

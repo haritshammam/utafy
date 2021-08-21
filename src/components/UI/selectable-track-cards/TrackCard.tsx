@@ -43,17 +43,8 @@ const TrackCard = ({
   };
 
   return (
-    <div
-      className={styles.track_card_container}
-      onClick={handleSelectTrack}
-      data-testid="track-card-container"
-    >
-      {isTrackSelected && (
-        <div
-          className={styles.track_card_border}
-          data-testid="track-card-border"
-        ></div>
-      )}
+    <div className={styles.track_card_container} onClick={handleSelectTrack}>
+      {isTrackSelected && <div className={styles.track_card_border}></div>}
       <img
         src={trackData.album.images[1].url}
         alt="Album"

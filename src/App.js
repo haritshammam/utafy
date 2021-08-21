@@ -47,10 +47,13 @@ function App() {
     }
   }
 
+  // Expiration Time
+  const inFiveMinutes = new Date(new Date().getTime() + 5 * 60 * 1000);
+
   useEffect(() => {
     if (window.location.hash) {
       const { access_token } = getParamsFromUrl(window.location.hash)
-      Cookies.set('accessToken', access_token, { expires: 1 })
+      Cookies.set('accessToken', access_token, { expires: inFiveMinutes })
     }
     readCookie()
     if (accessToken) {
